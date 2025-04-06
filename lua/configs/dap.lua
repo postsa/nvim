@@ -6,7 +6,7 @@ local dap_virtual_text = require "nvim-dap-virtual-text"
 -- Dap Virtual Text
 dap_virtual_text.setup()
 mason_dap.setup {
-  ensure_installed = { "delve" },
+  ensure_installed = { "delve", "debugpy" },
   automatic_installation = true,
   handlers = {
     function(config)

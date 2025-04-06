@@ -13,6 +13,8 @@ vim.opt.rtp:prepend(lazypath)
 
 local lazy_config = require "configs.lazy"
 
+vim.g.mapleader = ","
+
 -- load plugins
 require("lazy").setup({
   {
@@ -43,6 +45,7 @@ require("conform").setup {
     lua = { "stylua" },
     python = { "isort", "black" },
     rust = { "rustfmt", lsp_format = "fallback" },
+    typescript = { "prettierd", "prettier", stop_after_first = true },
     javascript = { "prettierd", "prettier", stop_after_first = true },
     go = { "gofumpt" },
   },

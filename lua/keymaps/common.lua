@@ -35,4 +35,38 @@ wk.add {
     end,
     desc = "oil open",
   },
+  {
+    "<leader>tf",
+    function()
+      require("nvchad.term").toggle {
+        pos = "float",
+        id = "fa",
+        cmd = "lazygit",
+        float_opts = { width = 0.8, height = 0.6, col = 0.1, row = 0.2, border = "double" },
+      }
+    end,
+    desc = "New floating terminal",
+    mode = "n",
+  },
+  {
+    "<leader>gb",
+    function()
+      require("gitsigns").blame()
+    end,
+    desc = "git blame",
+  },
+  {
+    "<leader>gc",
+    function()
+      require("gitsigns").blame_line()
+    end,
+    desc = "git blame current line",
+  },
+  {
+    "<leader>gl",
+    function()
+      require("gitsigns").toggle_current_line_blame()
+    end,
+    desc = "toggle current line blame",
+  },
 }

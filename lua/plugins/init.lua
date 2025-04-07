@@ -88,4 +88,8 @@ return {
     "dmitmel/cmp-cmdline-history",
     event = "BufRead",
   },
+  {
+    "nvim-tree/nvim-tree.lua",
+    enabled = false,
+  },
 }

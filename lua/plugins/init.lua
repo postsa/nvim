@@ -97,10 +97,10 @@ return {
   },
   {
     "hrsh7th/cmp-cmdline",
-    event = "InsertEnter",
+    event = "BufRead",
   },
   {
     "dmitmel/cmp-cmdline-history",
-    event = "InsertEnter",
+    event = "BufRead",
   },
 }

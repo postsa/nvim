@@ -59,6 +59,7 @@ require "configs.dap"
 
 require "keymaps.common"
 require "keymaps.dap"
+require "keymaps.neotest"
 
 require("telescope").load_extension "ui-select"
 
@@ -112,3 +113,11 @@ cmp.setup.cmdline(":", {
     },
   },
 })
+
+require("neotest").setup {
+  adapters = {
+    require "neotest-python" {
+      dap = { justMyCode = false },
+    },
+  },
+}

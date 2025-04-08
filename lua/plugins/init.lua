@@ -101,10 +101,8 @@ return {
       "nvim-treesitter/nvim-treesitter",
     },
   },
-  {
-    "nvim-neotest/neotest-python",
-  },
-  {
-    "tpope/vim-surround",
-  },
+  "fredrikaverpil/neotest-golang",
+  "nvim-neotest/neotest-jest",
+  "nvim-neotest/neotest-python",
+  "tpope/vim-surround",
 }

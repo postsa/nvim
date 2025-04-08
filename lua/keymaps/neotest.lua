@@ -29,4 +29,11 @@ wk.add {
     end,
     desc = "neotest show output",
   },
+  {
+    "<leader>ns",
+    function()
+      require("neotest").summary.toggle()
+    end,
+    desc = "neotest show summary",
+  },
 }

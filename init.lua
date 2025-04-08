@@ -119,5 +119,7 @@ require("neotest").setup {
     require "neotest-python" {
       dap = { justMyCode = false },
     },
+    require "neotest-jest" {},
+    require "neotest-golang" {},
   },
 }

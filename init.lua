@@ -116,10 +116,8 @@ cmp.setup.cmdline(":", {
 
 require("neotest").setup {
   adapters = {
-    require "neotest-python" {
-      dap = { justMyCode = false },
-    },
+    require "neotest-python" {},
     require "neotest-jest" {},
-    require "neotest-golang" {},
+    -- require "neotest-golang" {},
   },
 }

@@ -12,9 +12,39 @@ mason_dap.setup {
     function(config)
       require("mason-nvim-dap").default_setup(config)
     end,
+    python = function(config)
+      config.adapters = {
+        type = "executable",
+        command = "python",
+        args = {
+          "-m",
+          "debugpy.adapter",
+        },
+      }
+      require("mason-nvim-dap").default_setup(config)
+    end,
   },
 }
--- ${command:pickProcess}
+
+dap.configurations.python = {
+  {
+    type = "python",
+    name = "Debug (attach)",
+    request = "attach",
+    connect = {
+      host = "localhost",
+      port = 5678,
+    },
+  },
+  {
+    type = "python",
+    name = "Debug",
+    request = "launch",
+    program = "${file}",
+    justMyCode = false,
+  },
+}
+
 dap.configurations.go = {
   {
     type = "delve",
@@ -79,22 +109,26 @@ ui.setup {
     {
       elements = {
         {
-          id = "scopes",
+          id = "repl",
           size = 1.0,
         },
       },
       position = "bottom",
-      size = 20,
+      size = 15,
     },
     {
       elements = {
         {
           id = "stacks",
-          size = 1.0,
+          size = 0.4,
+        },
+        {
+          id = "scopes",
+          size = 0.6,
         },
       },
       position = "left",
-      size = 40,
+      size = 60,
     },
   },
   mappings = {

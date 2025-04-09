@@ -6,8 +6,8 @@ local map = vim.keymap.set
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
+map("n", "U", ":red<CR>")
 
-vim.keymap.del("n", "<leader>n")
 vim.keymap.del("n", "<C-n>")
 vim.keymap.del("n", "<leader>e")
 

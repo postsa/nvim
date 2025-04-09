@@ -70,4 +70,19 @@ wk.add {
     end,
     desc = "toggle current line blame",
   },
+  {
+    "<leader>ef",
+    function()
+      vim.api.nvim_echo({ { vim.fn.expand "%:p", "hl-Normal" } }, false, {})
+    end,
+    desc = "echo absolute file path",
+  },
+
+  {
+    "<leader>sd",
+    function()
+      require("telescope.builtin").diagnostics()
+    end,
+    desc = "telescope diagnostics",
+  },
 }

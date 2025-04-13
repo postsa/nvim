@@ -105,4 +105,15 @@ return {
   "nvim-neotest/neotest-jest",
   "nvim-neotest/neotest-python",
   "tpope/vim-surround",
+  {
+    "akinsho/git-conflict.nvim",
+    version = "*",
+    config = true,
+  },
+
+  {
+    "MeanderingProgrammer/render-markdown.nvim",
+    dependencies = { "echasnovski/mini.icons" },
+    opts = {},
+  },
 }

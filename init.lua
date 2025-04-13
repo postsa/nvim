@@ -43,7 +43,7 @@ require("oil").setup()
 require("conform").setup {
   formatters_by_ft = {
     lua = { "stylua" },
-    python = { "isort", "black" },
+    python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
     rust = { "rustfmt", lsp_format = "fallback" },
     typescript = { "prettierd", "prettier", stop_after_first = true },
     javascript = { "prettierd", "prettier", stop_after_first = true },
@@ -121,3 +121,7 @@ require("neotest").setup {
     -- require "neotest-golang" {},
   },
 }
+
+require("git-conflict").setup()
+
+require("render-markdown").setup()

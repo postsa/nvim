@@ -85,4 +85,18 @@ wk.add {
     end,
     desc = "telescope diagnostics",
   },
+  {
+    "<leader>gs",
+    function()
+      require("gitsigns.actions").stage_buffer()
+    end,
+    desc = "stage buffer",
+  },
+  {
+    "<leader>gu",
+    function()
+      require("gitsigns.actions").reset_buffer_index()
+    end,
+    desc = "unstage buffer",
+  },
 }

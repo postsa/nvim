@@ -4,7 +4,7 @@ require("nvchad.configs.lspconfig").defaults()
 local lspconfig = require "lspconfig"
 
 -- EXAMPLE
-local servers = { "html", "cssls", "gopls", "ts_ls", "pylsp", "yamlls" }
+local servers = { "html", "cssls", "gopls", "ts_ls", "ruff", "pylsp", "yamlls" }
 local nvlsp = require "nvchad.configs.lspconfig"
 
 -- lsps with default config
@@ -50,3 +50,19 @@ lspconfig.yamlls.setup {
 }
 
 require("lspconfig").gh_actions_ls.setup {}
+
+require("lspconfig").pylsp.setup {
+  on_attach = nvlsp.on_attach,
+  on_init = nvlsp.on_init,
+  capabilities = nvlsp.capabilities,
+  settings = {
+    pylsp = {
+      plugins = {
+        pyflakes = { enabled = false },
+        pylint = { enabled = false },
+        pycodestyle = { maxLineLength = 110 },
+        mccabe = { enabled = false },
+      },
+    },
+  },
+}
